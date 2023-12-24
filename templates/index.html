@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decarga de videos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Descarga de videos de Youtube</h1>
+    <form action="/descargar" method="post">
+        <label for="url">Url del video de Youtube:</label>
+        <input type="text" name="url" required>
+
+        <label for="carpeta_destino">Carpeta de destino</label>
+        <input type="text" name="carpeta_destino" placeholder="Nombre de la carpeta ">
+
+        <button type="submit">Descargar</button>
+    </form>
+    {% if mesaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+</body>
+</html>
